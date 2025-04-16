@@ -57,7 +57,7 @@ const Hero = () => {
       </div>
 
       {/* Image Section */}
-      <div className="w-full lg:w-1/2 order-1 lg:order-2 flex justify-center items-center relative mb-10 lg:mb-0 group">
+      <div className="w-full lg:w-1/2 order-1 lg:order-2 flex justify-center items-center relative mb-10 lg:mb-0 group ">
         <div className="absolute w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full blur-2xl bg-orange-500 opacity-0 group-hover:opacity-60 transition duration-500 z-0 animate-flame" />
         <img
           src={guitar}
