@@ -1,4 +1,4 @@
-import{f as o,u as n,j as e}from"./react-BVUvWYxo.js";import{z as l,h as c,k as m,l as d,m as u,n as g}from"./react-icons-C6V8LYzJ.js";import{m as x}from"./framer-motion-Bd_CRvd1.js";import"./vendor-BAfk173O.js";const h={"the-future-of-music-gear":{title:"The Future of Music Gear",date:"April 10, 2025",author:"Harmonics Team",comments:8,tags:["Technology","Innovation","Instruments"],image:"image/future-gear.png",body:`
+import{f as o,u as n,j as e}from"./react-BVUvWYxo.js";import{z as l,h as c,k as m,l as d,m as u,n as g}from"./react-icons-C6V8LYzJ.js";import{m as x}from"./framer-motion-Bd_CRvd1.js";import"./vendor-BAfk173O.js";const h={"the-future-of-music-gear":{title:"The Future of Music Gear",date:"April 10, 2024",author:"Harmonics Team",comments:8,tags:["Technology","Innovation","Instruments"],image:"image/future-gear.png",body:`
       Technology is reshaping the music industry from top to bottom. Smart instruments, AI-generated soundscapes, and app-controlled pedals are becoming mainstream. 
 
       In this article, we explore what’s next in the evolution of music gear and how musicians can embrace it without losing the soul of analog.
