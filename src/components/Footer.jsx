@@ -14,7 +14,6 @@ const Footer = () => {
       className="bg-black text-white py-12 px-4 sm:px-12 border-t border-primary"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Branding */}
         <div>
           <h1 className="text-3xl font-extrabold">
             HAR<span className="text-[#FF3C38]">MONICS</span>
