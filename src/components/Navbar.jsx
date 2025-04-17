@@ -6,19 +6,19 @@ const Navbar = () => {
   const [active, setActive] = useState("home");
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const navitems = ["home", "shop", "contact", "about"];
+  const navitems = ["home", "shop", "about", "blog"];
 
   return (
     <>
-      <nav className="max-w-full flex justify-between items-center py-3 px-10 sticky top-0 h-20 bg-background z-50">
+      <nav className="max-w-full flex justify-between items-center py-4 px-8 lg:px-16 sticky top-0 h-20 bg-black/90 backdrop-blur-md border-b border-[#FF3C38] z-50">
         {/* Logo */}
-        <div className="flex font-bold">
-          <span className="cursor-default text-white text-xl">HARM</span>
-          <span className="cursor-default text-xl text-primary">ONICS</span>
+        <div className="flex font-extrabold text-xl">
+          <span className="text-white">HARM</span>
+          <span className="text-primary">ONICS</span>
         </div>
 
-        {/* lg Nav Items */}
-        <ul className="hidden lg:flex gap-10">
+        {/* Desktop Nav Items */}
+        <ul className="hidden lg:flex gap-10 items-center">
           {navitems.map((item) => (
             <li key={item}>
               <Link
@@ -28,13 +28,16 @@ const Navbar = () => {
                 offset={-70}
                 duration={500}
                 onSetActive={() => setActive(item)}
-                className={`inline-block cursor-pointer capitalize text-md font-semibold hover:underline hover:underline-offset-8 decorations-red-[#FF3C38] transition-all duration-300 ease-in-out transform hover:scale-105 ${
-                  active === item
-                    ? "text-[#FF3C38] scale-105 font-bold underline underline-offset-8 decoration-red-[#FF3C38]"
-                    : "text-white"
-                } hover:text-[#FF3C38]`}
+                className={`relative inline-block cursor-pointer capitalize text-md font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 ${
+                  active === item ? "text-primary font-bold" : "text-white"
+                } group`}
               >
                 {item}
+                <span
+                  className={`absolute left-0 bottom-[-4px] h-[2px] w-full bg-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ${
+                    active === item ? "scale-x-100" : ""
+                  }`}
+                />
               </Link>
             </li>
           ))}
@@ -42,12 +45,12 @@ const Navbar = () => {
 
         {/* Login Button */}
         <div className="hidden lg:flex">
-          <button className="border border-[#FF3C38] py-2 px-3 font-bold w-30 text-sm text-white rounded-3xl hover:bg-[#FF3C38] transition-all duration-300 ease-in-out transform hover:scale-105">
+          <button className="border border-primary py-2 px-5 w-30 rounded-full text-white font-semibold text-sm hover:bg-primary hover:text-black transition-all duration-300 hover:shadow-lg ease-in-out transform hover:scale-110">
             Login
           </button>
         </div>
 
-        {/* mobile Menu Icon */}
+        {/* Mobile Menu Icon */}
         <div className="flex lg:hidden">
           <button onClick={() => setDrawerOpen(true)}>
             <Menu color="white" size={28} />
@@ -55,7 +58,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* mobile Drawer */}
+      {/* Mobile Drawer */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-black z-50 transform ${
           drawerOpen ? "translate-x-0" : "translate-x-full"
@@ -81,16 +84,16 @@ const Navbar = () => {
                   setActive(item);
                   setDrawerOpen(false);
                 }}
-                className={`cursor-pointer capitalize text-lg font-medium transition-all duration-300 ease-in-out transform hover:scale-105 ${
-                  active === item ? "text-[#FF3C38]" : "text-white"
-                } hover:text-[#FF3C38]`}
+                className={`cursor-pointer capitalize text-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+                  active === item ? "text-primary" : "text-white"
+                } hover:text-primary`}
               >
                 {item}
               </Link>
             </li>
           ))}
           <li>
-            <button className="w-full border border-[#FF3C38] py-2 px-3 font-semibold text-md text-white rounded-3xl hover:bg-[#FF3C38] transition">
+            <button className="w-full border border-primary py-2 px-4 rounded-full text-white font-semibold hover:bg-primary hover:text-black transition-all duration-300">
               Login
             </button>
           </li>

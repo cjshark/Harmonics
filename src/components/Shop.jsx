@@ -1,9 +1,13 @@
+// Updated Shop.jsx with View More button
 import React from "react";
 import { FaTags, FaStar } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { color, easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { FaBasketballBall, FaShoppingCart, FaTrophy } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -67,20 +71,12 @@ const products = [
 
 const Shop = () => {
   return (
-    <div className="bg-background text-white py-8">
+    <div className="bg-background text-white py-8 min-h-screen">
       <section>
         {/* Marquee */}
         <div className="marquee-wrapper w-full border-t-2 border-b-2 border-p py-5 mb-30">
           <div className="marquee-track flex gap-10 px-8 whitespace-nowrap scrollbar-hide">
-            {[
-              ...brand,
-              ...brand,
-              ...brand,
-              ...brand,
-              ...brand,
-              ...brand,
-              ...brand,
-            ].map((item, idx) => (
+            {[...brand, ...brand, ...brand].map((item, idx) => (
               <div
                 key={idx}
                 className="flex items-center space-x-3 mr-10 min-w-fit"
@@ -103,11 +99,21 @@ const Shop = () => {
           <h2 className="text-5xl font-bold text-heading mt-6">
             Featured Products
           </h2>
-          <p className="text-p mb-6 mt-2 text-xl">
-            Get yours Now! <span className="inline-block ml-2">⬇️</span>
-          </p>
+          <div className="flex  justify-between mb-8">
+            <p className="text-p mb-6 mt-2 text-xl">
+              Get yours Now! <span className="inline-block ml-2">⬇️</span>
+            </p>
+            <Link
+              to="/shop"
+              className=" flex items-center justify-end text-primary font-semibold text-lg hover:text-white  transition-all"
+            >
+              View More
+              <div className="ml-3">
+                <FaArrowRight />
+              </div>
+            </Link>
+          </div>
 
-          {/* Swiper Carousel */}
           <div className="relative">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
@@ -116,10 +122,7 @@ const Shop = () => {
               loop={true}
               autoplay={{ delay: 4000, disableOnInteraction: false }}
               pagination={{ el: ".swiper-pagination-custom", clickable: true }}
-              navigation={{
-                nextEl: ".custom-next",
-                prevEl: ".custom-prev",
-              }}
+              navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
               breakpoints={{
                 300: { slidesPerView: 1 },
                 768: { slidesPerView: 2 },
@@ -171,60 +174,65 @@ const Shop = () => {
             </button>
           </div>
 
-          {/* Custom Pagination Dots */}
-          <div className="swiper-pagination-custom mt-7 gap-3 flex justify-center" />
+          {/* Pagination & View More */}
+          <div className="swiper-pagination-custom mt-7 gap-3 flex justify-center"></div>
         </div>
       </section>
 
+      {/* Promo Section */}
       <motion.section
-        className="relative min-h-screen bg-[url('/image/advertisementbg.png')] bg-center bg-no-repeat bg-cover flex items-center justify-center"
+        className="relative min-h-screen bg-[url('/image/advertisementbg.png')] bg-center bg-no-repeat bg-cover flex items-center justify-center px-4 sm:px-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 4 }}
+        transition={{ duration: 3 }}
         viewport={{ once: false }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black pointer-events-none z-10" />
-
-        <div className="relative z-20 w-full mt-20 flex flex-col justify-center items-center space-y-7 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black pointer-events-none z-10" />
+        <div className="relative z-20 flex flex-col justify-center items-center space-y-10 text-center">
           <motion.div
             initial={{ x: "100%" }}
             whileInView={{ x: "0%" }}
             transition={{ duration: 1 }}
-            viewport={{ once: false }}
-            className="lg:w-xl sm:w-lg mb-10 sm:h-15 h-10 w-[15rem] lg:h-20 rounded-xl border border-white z-20 bg-background flex justify-center items-center"
+            className="flex items-center gap-4 px-6 py-3 rounded-xl bg-black/80 border border-red-500 shadow-lg backdrop-blur-sm"
           >
-            <div className="lg:hidden">
-              <FaTags size={25} color="#FF3C38" />
-            </div>
-            <div className="hidden lg:flex">
-              <FaTags size={35} color="#FF3C38" />
-            </div>
-            <h1 className="lg:text-3xl sm:text-xl text-[12px] lg:ml-5 ml-3 text-primary">
-              Get 15% Off only for today, Shop now
+            <FaTags size={30} className="text-red-500" />
+            <h1 className="text-lg md:text-2xl text-white font-semibold">
+              Get <span className="text-red-400">15% Off</span> only for today,{" "}
+              <span className="underline">Shop now</span>
             </h1>
           </motion.div>
-
           <motion.div
-            initial={{ opacity: 0, scale: -0.25, rotateX: "180deg" }}
+            initial={{ opacity: 0, scale: 0.9, rotateX: "90deg" }}
             whileInView={{ opacity: 1, scale: 1, rotateX: "0deg" }}
             transition={{ duration: 1.5 }}
-            className="flex flex-col justify-center items-center space-y-5"
+            className="space-y-3"
           >
-            <h2 className="lg:text-6xl sm:text-5xl text-4xl font-bold">
-              SCORE BIG WITH
+            <div className="flex justify-center items-center gap-3">
+              <FaBasketballBall
+                size={35}
+                className="text-orange-400 drop-shadow"
+              />
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-md">
+                SCORE BIG WITH
+              </h2>
+            </div>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-red-500">
+              Our
             </h2>
-            <h2 className="lg:text-6xl sm:text-5xl text-4xl font-bold">Our</h2>
-            <h2 className="lg:text-6xl sm:text-5xl text-4xl font-bold">
-              BASKETBALL PROMO
-            </h2>
+            <div className="flex justify-center items-center gap-3">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-md ml-15">
+                BASKETBALL PROMO
+              </h2>
+              <FaTrophy size={35} className="text-yellow-400 drop-shadow" />
+            </div>
           </motion.div>
-
           <motion.button
-            initial={{ scale: 0.5 }}
+            initial={{ scale: 0.8 }}
             whileInView={{ scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-block mt-10 py-2 px-4 w-50 h-15 sm:w-70 sm:h-17 lg:w-80 lg:h-20 rounded-2xl font-bold lg:text-2xl bg-transparent border-2 border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out transform hover:scale-110"
+            transition={{ duration: 0.4 }}
+            className="mt-6 flex items-center gap-3 px-8 py-4 rounded-full text-lg md:text-xl font-bold text-white bg-red-500 hover:bg-red-600 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:scale-105"
           >
+            <FaShoppingCart size={22} />
             BUY NOW
           </motion.button>
         </div>
