@@ -64,7 +64,7 @@ const Navbar = () => {
           drawerOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 shadow-lg`}
       >
-        <div className="flex justify-between items-center px-6 py-4 border-b border-slate-600">
+        <div className="flex justify-between items-center px-6 py-4 border-b border-primary">
           <h2 className="text-white text-lg font-bold">Menu</h2>
           <button onClick={() => setDrawerOpen(false)}>
             <X color="white" size={24} />

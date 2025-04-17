@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaTwitter } from "react-icons/fa6";
 import { Link as ScrollLink } from "react-scroll";
+import colors from "../assets/colors";
 
 const Footer = () => {
   return (
@@ -88,17 +91,23 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-bold text-[#FF3C38] mb-4">Follow Us</h3>
           <div className="flex space-x-4 text-2xl">
-            <a href="#">
-              <i className="fab fa-facebook" />
+            <a
+              href="#"
+              className="w-10 h-10 rounded-full flex items-center justify-center bg-[#1877F2] hover:scale-110 transition duration-300 shadow-md"
+            >
+              <FaFacebookF size={20} color={colors.white} />
             </a>
-            <a href="#">
-              <i className="fab fa-instagram" />
+            <a
+              href="#"
+              className="w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 hover:scale-110 transition duration-300 shadow-md"
+            >
+              <FaInstagram size={20} color={colors.white} />
             </a>
-            <a href="#">
-              <i className="fab fa-twitter" />
-            </a>
-            <a href="#">
-              <i className="fab fa-youtube" />
+            <a
+              href="#"
+              className="w-10 h-10 rounded-full flex items-center justify-center bg-[#1DA1F2] hover:scale-110 transition duration-300 shadow-md"
+            >
+              <FaTwitter size={20} color={colors.white} />
             </a>
           </div>
         </div>

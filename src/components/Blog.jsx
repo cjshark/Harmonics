@@ -87,7 +87,14 @@ export default function Blog() {
                 </div>
               </div>
 
-              <h3 className="text-2xl font-semibold text-white mb-2 hover:underline cursor-pointer">
+              <h3
+                  onClick={() =>
+                    navigate(
+                      `/blog/${post.title.toLowerCase().replace(/\s+/g, "-")}`
+                    )
+                  }
+                className="text-2xl font-semibold text-white mb-2 hover:underline cursor-pointer"
+              >
                 {post.title}
               </h3>
 
@@ -95,7 +102,7 @@ export default function Blog() {
                 {post.excerpt}
               </p>
 
-              <div className="flex flex-wrap gap-2 text-xs text-red-400 mb-4">
+              <div className="flex flex-wrap gap-2 text-xs text-red-400 mb-4 cursor-default">
                 {post.tags.map((tag, i) => (
                   <span
                     key={i}
