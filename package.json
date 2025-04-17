@@ -1,7 +1,6 @@
 {
   "name": "harmonics",
   "homepage": "https://cjshark.github.io/Harmonics/",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
