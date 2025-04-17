@@ -12,7 +12,7 @@ import {
 const blogContent = {
   "the-future-of-music-gear": {
     title: "The Future of Music Gear",
-    date: "April 10, 2025",
+    date: "April 10, 2024",
     author: "Harmonics Team",
     comments: 8,
     tags: ["Technology", "Innovation", "Instruments"],
