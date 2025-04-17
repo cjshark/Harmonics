@@ -6,11 +6,11 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="bg-background">
-        <section id="home">
+      <div className="bg-background overflow-x-hidden">
+        <section id="home" className="overflow-x-hidden">
           <Hero />
         </section>
-        <section id="shop">
+        <section id="shop" className="overflow-x-hidden">
           <Shop />
         </section>
       </div>

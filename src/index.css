@@ -1,6 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
 
 :root {
   font-family: "Oswald", sans-serif;
@@ -58,4 +57,17 @@ body {
 .swiper-pagination-custom .swiper-pagination-bullet-active {
   background-color: #ff3c38;
   opacity: 1;
+}
+
+.advertisement {
+  background-image: url("/public/image/advertisementbg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .advertisement {
+    background-position: bottom;
+  }
 }
